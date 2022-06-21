@@ -4,34 +4,45 @@
 
 Shopping Engine is a management software for in-store shoppers; we allow our client's VIP customers to place orders, match them with a shopper that suits their taste. 
 
-Our system was intended for small shops which would handle requests in real time, matching a shopper at the given store with a buy and automatically dispatching the request. 
+## Your Task
 
-On of our clients _Artisan Groceries_, has recently expanded and is looking to start setting up shopping list for their shoppers at least a day in advance. The automated process we're currently using, is hot-spotting their staff too much, and they'd rather manually fine tune our choices. 
+Create 2 Views
 
-## Task
+1. List View
+2. Assignment View 
 
-We need to add a feature to assign carts to shoppers in advance.
+### List View Requirments
 
-The server will handle the match making, and provide a list of _shoppers_ and _carts_ to the interface. We've provided data in a JSON format that mirrors the API in the **data** folder. Feel free to import the data directly, and skip over the networking logic. 
+API Calls and Networking are not needed for this prototype, you can use the files located in the data folder and import them directly into the app. 
 
-The interface should have two key elements, one for unassigned carts and another for matched shoppers. 
+* A four column or similar layout
+  * The First column - a list of unassigned carts
+    * Carts should have a list of items assigned to them
+    * Clicking on an unassigned cart should transition to the Assignment View for selected cart. 
+  * The other columns are each dedicated to an individual shopper
+    * Each shopper should have a list of carts assigned to them
+    * The carts should display an estimated time in minutes - (items * minute_per_item) + (miles * minute_per_mile)
+    * The shopper should have a total estimated time in minutes, achived by adding up the estimated time for all the carts assigned. 
 
-Carts contain two important values - _# of items_, the number of unique items in the shopping cart, and _miles from store_ how many miles from the store the person lives. 
+#### Design Sketch
 
-Each shopper has two important values, _minutes per item_ which is the average number of minutes a shopper takes locating and selecting an item; and _minutes per mile_ which is the average number of minutes per mile they take per round trip.
+![Design Sketch](Design.png)
 
-When a shopper has carts assigned to them, the cart should appear within their 'card', and displate a time estimate. Additionally, the shopper should also display a total time assigned for all of their carts. Should the shopper's carts exceed 4 hours (240 Minutes), we want to use a warning color tone to indicate they're close to full; and that should shift to an error color tone to indace they're full at 5 hours (300 minutes). 
+### Assignment View Requirements
 
-### Assigning Tasks 
+* Divided into a Top and a Bottom Section
+  * The top section is the selected cart's details 
+    * It should display the distance from the store, and any restrictions the buyer has. 
+    * It should list out the cart's items with their name and isle. 
+  * The bottom section is split into a 3 column layout, with each column being one of the selected shoppers. 
+    * Each shopper should display any restrictions the buyer has (so they can be matched up if possible). 
+    * Each shopper should also display an estimated delivery time (based off distance and minutes_per_mile) and an estimate shopping time (based off item count and minutes per item) 
+    * Additionally, the assignment button should shift into a 'warning' color if they're currently assigned more than 240 minutes, and an 'error' color if they're currently assigned more than 300 minutes. 
 
-Our team can't decide on how best to handle the assignment experiance - you are the tie breaker. 
+#### Design Sketch 
 
-**Drag and Drop** The team agrees this is likely the best user experiance, but also the most time consuming to build and test. Due to the complexity we recommend adding a library, but we need to support both tablets and laptops so touch events and click events must be accounted for. 
+![Assignment Sketch](Design-Assign.png)
 
-**Auto Select Button** This experiance focuses on clicking an 'assign' button on a cart, in the order of the cart's importance. All the button needs to do is assign the cart to the shopper with the lowest total time. If all the times are equal it will select the shopper who will complete the order the quickest. 
-
-**Selection Screen** Offering a fullscrean view with all of the shoppers data points, as opposed to the limited 'card' view. 
-
-### Design
-
-A Quick Design Sketch was thrown together to provide a rought idea
+1. Button Color should change to a warning-like color after a shopper has been assigned more than 240 minutes of work (4 Hours)
+2. Button Color should change to a error-like color after a shopper has been assigned more than 300 minutes of work (5 Hours)
+3. Optional: Highlight any shared restrictions. 

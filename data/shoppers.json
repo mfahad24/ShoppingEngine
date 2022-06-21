@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Bob the Baker",
+        "minute_per_item": 3.1,
+        "minute_per_mile": 5.7,
+        "favorite_meal": "Breakfast",
+        "restrictions": [
+            "Peanut Alergy"
+        ],
+        "overall_rating": 4.1
+    },
+    {
+        "id": 2,
+        "name": "Tina the Butcher",
+        "minutes_per_item": 2.5,
+        "minute_per_mile": 6.1,
+        "favorite_meal": "Dinner",
+        "restrictions": [
+            "Gluten Alergy"
+        ],
+        "overall_rating": 4.5
+    },
+    {
+        "id": 3,
+        "name": "Jack in Produce",
+        "minutes_per_item": 5.2,
+        "minutes_per_mile": 4.1,
+        "favorite_meal": "Lunch",
+        "restrictions": [
+            "Vegan",
+            "Gluten Intollerant",
+            "Lactose Intollerant"
+        ],
+        "overall_rating": 3.7
+    }
+]
