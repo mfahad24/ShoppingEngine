@@ -1,0 +1,108 @@
+* {
+  font-weight: bold;
+}
+
+.list-view-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.list-view-container__hidden {
+  display: none;
+}
+
+.unassigned-carts-container,
+.shopper-one-container,
+.shopper-two-container,
+.shopper-three-container {
+  width: 375px;
+  height: 85vh;
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.unassigned-carts-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.unassigned-carts__title {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.unassigned-carts__cart-container {
+  background-color: white;
+  margin: 20px 0px 10px 0px;
+  cursor: pointer;
+}
+.unassigned-carts__cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  background-color: white;
+  padding: 0px 15px;
+}
+
+.unassigned-carts__cart-list {
+  list-style-type: none;
+  text-align: left;
+}
+
+.unassigned-carts__cart-list--single-cart-item-name {
+  font-size: 14px;
+}
+
+.unassigned-carts__cart-list--single-cart-item-name-alt {
+  font-size: 11px;
+}
+
+/* .unassigned-carts__cart-list-view-all-button {
+    font-size: 10px; 
+    text-decoration: underline;
+} */
+
+/* shopper css */
+
+.shopper-one-container,
+.shopper-two-container,
+.shopper-three-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-one__title,
+.shopping-two__title,
+.shopping-three__title {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.shopper-one__cart:nth-child(2),
+.shopper-two__cart:nth-child(2),
+.shopper-three__cart:nth-child(2) {
+  margin-top: 20px;
+}
+
+.shopper-one__cart,
+.shopper-two__cart,
+.shopper-three__cart {
+  justify-content: space-between;
+  margin: 10px 2px 0px 2px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: lightgrey;
+}
+
+.shopper-one__cart--cart-total-minutes {
+  margin: auto 0px 10px 0px;
+  font-size: 25px;
+}
+
+/* end shopper css  */
