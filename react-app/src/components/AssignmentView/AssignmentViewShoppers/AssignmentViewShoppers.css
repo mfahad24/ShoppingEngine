@@ -1,0 +1,61 @@
+.assignment-view-shoppers-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px;
+}
+
+.assignment-view-shopper-1,
+.assignment-view-shopper-2,
+.assignment-view-shopper-3 {
+  margin: 0px 20px;
+  background-color: lightgrey;
+  padding: 20px 0px;
+  width: 350px;
+  font-size: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.assignment-view-shopper-1 > div,
+.assignment-view-shopper-2 > div,
+.assignment-view-shopper-3 > div {
+  padding: 10px 10px;
+}
+
+.assignment-view-shopper-1--title,
+.assignment-view-shopper-2--title,
+.assignment-view-shopper-3--title {
+  font-size: 30px;
+}
+
+.assignment-view-shopper-1--button,
+.assignment-view-shopper-2--button,
+.assignment-view-shopper-3--button {
+  color: white;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 5px;
+  font-weight: lighter;
+}
+
+.assignment-view-shopper-1--button,
+.assignment-view-shopper-2--button,
+.assignment-view-shopper-3--button {
+  background-color: #0cafff;
+}
+
+.assignment-view-shopper-1--button--warning,
+.assignment-view-shopper-2--button--warning,
+.assignment-view-shopper-3--button--warning {
+  background-color: goldenrod;
+}
+
+.assignment-view-shopper-1--button--error,
+.assignment-view-shopper-2--button--error,
+.assignment-view-shopper-3--button--error {
+  background-color: red;
+}
