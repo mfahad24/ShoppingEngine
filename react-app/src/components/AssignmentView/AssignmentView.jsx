@@ -22,6 +22,7 @@ const AssignmentView = ({
   ) => {
     let totalTime = Number(shoppingTime) + Number(deliveryTime);
     let totalTimeFixed = Number(totalTime.toFixed(0));
+
     if (shopperId === 1) {
       setShopperOne((prev) => [...prev, { assignedCart, totalTimeFixed }]);
     } else if (shopperId === 2) {
@@ -41,7 +42,7 @@ const AssignmentView = ({
     }
   };
 
-  if (assignmentViewVisibility) {
+  if (assignmentViewVisibility === true) {
     return (
       <div className="assignment-view-container">
         <div

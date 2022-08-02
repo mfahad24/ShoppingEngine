@@ -4,11 +4,12 @@
   background-color: white;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
-.shopping-one__title,
-.shopping-two__title,
-.shopping-three__title {
+.shopper-one__title,
+.shopper-two__title,
+.shopper-three__title {
   font-size: 25px;
   margin-top: 10px;
 }
@@ -35,6 +36,7 @@
 .shopper-three__cart--cart-total-minutes {
   margin: auto 0px 10px 0px;
   font-size: 25px;
+  padding-top: 10px; 
 }
 
 .shopper-one__cart--nothing-assigned,

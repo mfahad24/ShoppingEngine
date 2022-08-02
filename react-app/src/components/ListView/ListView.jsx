@@ -16,7 +16,7 @@ const ListView = () => {
   const [shopperThreeAssignedMinutes, setShopperThreeAssignedMinutes] =
     useState(0);
 
-  const viewTheClickedCart = (clickedCartIndex) => {
+  const viewTheClickedCartInAssignmentView = (clickedCartIndex) => {
     setAssignmentViewVisbility(true);
     setClickedCart(clickedCartIndex);
   };
@@ -77,7 +77,7 @@ const ListView = () => {
             : "list-view-container"
         }
       >
-        <UnassignedCarts viewTheClickedCart={viewTheClickedCart} />
+        <UnassignedCarts viewTheClickedCartInAssignmentView={viewTheClickedCartInAssignmentView} />
         <ShopperList
           shopperOne={shopperOne}
           shopperOneAssignedMinutes={shopperOneAssignedMinutes}

@@ -2,7 +2,7 @@ import React from "react";
 import "./UnassignedCarts.css";
 import carts from "../../../../../data/carts.json";
 
-const UnassignedCarts = ({ viewTheClickedCart }) => {
+const UnassignedCarts = ({ viewTheClickedCartInAssignmentView }) => {
   return (
     <div className="unassigned-carts-container">
       <div className="unassigned-carts__title">Unassigned Carts</div>
@@ -12,7 +12,7 @@ const UnassignedCarts = ({ viewTheClickedCart }) => {
             className="unassigned-carts__cart-container"
             key={`unassigned-carts__cart-container${index}`}
             onClick={() => {
-              viewTheClickedCart(index);
+              viewTheClickedCartInAssignmentView(index);
             }}
           >
             <div className="unassigned-carts__cart">

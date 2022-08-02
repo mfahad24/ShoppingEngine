@@ -19,23 +19,38 @@ const AssignmentViewShoppers = ({
             carts[clickedCart].miles_from_store * shopper.minutes_per_mile
           ).toFixed(1);
           return (
-            <div className={`assignment-view-shopper-${index + 1}`}>
-              <div className={`assignment-view-shopper-${index + 1}--title`}>
+            <div
+              className={`assignment-view-shopper-${index + 1}`}
+              key={`assignment-view-shopper-${index + 1}`}
+            >
+              <div
+                className={`assignment-view-shopper-${index + 1}--title`}
+                key={`assignment-view-shopper-${index + 1}--title`}
+              >
                 {`Shopper ${shopper.id}`}
               </div>
-              {shopper.restrictions.map((restriction, index) => {
-                return (
-                  <span
-                    className={`assignment-view-shopper-${
-                      index + 1
-                    }--restrictions`}
-                  >
-                    {shopper.restrictions.length > 1
-                      ? `${restriction}, `
-                      : restriction}
-                  </span>
-                );
-              })}
+              <div
+                className={`assignment-view-shopper__restrictions`}
+                key={`assignment-view-shopper__restrictions-${index + 1}`}
+              >
+                {shopper.restrictions.map((restriction, index) => {
+                  return (
+                    <span
+                      className={`assignment-view-shopper__restriction--restriction`}
+                      key={`assignment-view-shopper__restriction--restriction-${
+                        index + 1
+                      }`}
+                    >
+                      {shopper.restrictions.length > 1
+                        ? index === shopper.restrictions.length - 1
+                          ? `${restriction} `
+                          : `${restriction}, `
+                        : restriction}
+                    </span>
+                  );
+                })}
+              </div>
+
               <div>{`Shopping Time: ${shoppingTime} Minutes`}</div>
               <div>{`Delivery Time: ${deliveryTime} Minutes `}</div>
               <div>{`Overall Rating: ${shopper.overall_rating}`}</div>
@@ -69,6 +84,7 @@ const AssignmentViewShoppers = ({
                       ? `assignment-view-shopper-${index + 1}--button--error`
                       : ""
                   }`}
+                  key={`assignment-view-shopper-${index + 1}--button-${index + 1}`}
                 >
                   Select Shopper
                 </button>
