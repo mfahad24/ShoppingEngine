@@ -46,7 +46,7 @@ const AssignmentViewHeader = ({ clickedCart }) => {
                   </span>
                 }
               </div>
-              <AssignmentViewHeaderItems singleCart={singleCart} />
+              <AssignmentViewHeaderItems singleCart={singleCart}/>
             </>
           );
         }

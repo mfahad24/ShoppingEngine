@@ -18,7 +18,7 @@
 .assignment-view-shopper-1 > div,
 .assignment-view-shopper-2 > div,
 .assignment-view-shopper-3 > div {
-  padding: 10px 10px;
+  padding: 7px 10px;
 }
 
 .assignment-view-shopper-1--title,
@@ -58,4 +58,8 @@
 .assignment-view-shopper-2--button--error,
 .assignment-view-shopper-3--button--error {
   background-color: red;
+}
+
+.assignment-view-shopper__restrictions {
+  height: 50px;
 }
