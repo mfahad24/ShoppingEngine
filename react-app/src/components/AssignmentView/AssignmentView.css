@@ -29,10 +29,6 @@
   font-size: 18px;
 }
 
-.assignment-view-header__cart-restrictions {
-  font-size: 18px;
-}
-
 /* shopper cards  */
 
 .assignment-view-shoppers-container {
@@ -79,14 +75,20 @@
   font-weight: lighter;
 }
 
-.assignment-view-shopper-1--button {
+.assignment-view-shopper-1--button,
+.assignment-view-shopper-2--button,
+.assignment-view-shopper-3--button {
   background-color: #0cafff;
 }
 
-.assignment-view-shopper-2--button {
+.assignment-view-shopper-1--button--warning,
+.assignment-view-shopper-2--button--warning,
+.assignment-view-shopper-3--button--warning {
   background-color: goldenrod;
 }
 
-.assignment-view-shopper-3--button {
+.assignment-view-shopper-1--button--error,
+.assignment-view-shopper-2--button--error,
+.assignment-view-shopper-3--button--error {
   background-color: red;
 }

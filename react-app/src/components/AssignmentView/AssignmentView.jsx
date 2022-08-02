@@ -7,7 +7,41 @@ const AssignmentView = ({
   assignmentViewVisibility,
   setAssignmentViewVisbility,
   clickedCart,
+  setShopperOne,
+  setShopperTwo,
+  setShopperThree,
+  shopperOneAssignedMinutes,
+  shopperTwoAssignedMinutes,
+  shopperThreeAssignedMinutes,
 }) => {
+  const setCartToShopper = (
+    shopperId,
+    assignedCart,
+    shoppingTime,
+    deliveryTime
+  ) => {
+    let totalTime = Number(shoppingTime) + Number(deliveryTime);
+    let totalTimeFixed = Number(totalTime.toFixed(0));
+    if (shopperId === 1) {
+      setShopperOne((prev) => [...prev, { assignedCart, totalTimeFixed }]);
+    } else if (shopperId === 2) {
+      setShopperTwo((prev) => [...prev, { assignedCart, totalTimeFixed }]);
+    } else {
+      setShopperThree((prev) => [...prev, { assignedCart, totalTimeFixed }]);
+    }
+  };
+
+  const setShopperTotalMinutesAssigned = (shopperId) => {
+    if (shopperId === 1) {
+      console.log(shopperOneAssignedMinutes);
+      return shopperOneAssignedMinutes;
+    } else if (shopperId === 2) {
+      return shopperTwoAssignedMinutes;
+    } else {
+      return shopperThreeAssignedMinutes;
+    }
+  };
+
   if (assignmentViewVisibility) {
     return (
       <div className="assignment-view-container">
@@ -63,6 +97,12 @@ const AssignmentView = ({
         })}
         <div className="assignment-view-shoppers-container">
           {shoppers.map((shopper, index) => {
+            let shoppingTime = (
+              carts[clickedCart].item_count * shopper.minutes_per_item
+            ).toFixed(1);
+            let deliveryTime = (
+              carts[clickedCart].miles_from_store * shopper.minutes_per_mile
+            ).toFixed(1);
             return (
               <div className={`assignment-view-shopper-${index + 1}`}>
                 <div className={`assignment-view-shopper-${index + 1}--title`}>
@@ -81,20 +121,44 @@ const AssignmentView = ({
                     </span>
                   );
                 })}
-                <div style={{ color: "red" }}>Shopping Time: 15.2 Minutes</div>
-                <div style={{ color: "red" }}>Delivery Time: 23.5 Minutes</div>
-                <div>{`Overall rating: ${shopper.overall_rating}`}</div>
-                <div
-                  style={{ color: "red" }}
-                >{`Buyer rating: ${shopper.overall_rating}`}</div>
+                <div>{`Shopping Time: ${shoppingTime} Minutes`}</div>
+                <div>{`Delivery Time: ${deliveryTime} Minutes `}</div>
+                <div>{`Overall Rating: ${shopper.overall_rating}`}</div>
+                <div>{`Buyer Rating: ${
+                  Object.keys(carts[clickedCart].buyer.ratings).length > 1
+                    ? (carts[clickedCart].buyer.ratings[
+                        Object.keys(carts[clickedCart].buyer.ratings)[0]
+                      ] +
+                        carts[clickedCart].buyer.ratings[
+                          Object.keys(carts[clickedCart].buyer.ratings)[1]
+                        ]) /
+                      2
+                    : carts[clickedCart].buyer.ratings["1"]
+                }`}</div>
                 <div>
                   <button
-                    className={`assignment-view-shopper-${index + 1}--button`}
+                    onClick={() =>
+                      setCartToShopper(
+                        shopper.id,
+                        clickedCart + 1,
+                        shoppingTime,
+                        deliveryTime
+                      )
+                    }
+                    className={`assignment-view-shopper-${index + 1}--button ${
+                      setShopperTotalMinutesAssigned(shopper.id) > 240 &&
+                      `assignment-view-shopper-${index + 1}--button--warning`
+                    } ${
+                      setShopperTotalMinutesAssigned(shopper.id) > 300 &&
+                      `assignment-view-shopper-${index + 1}--button--error`
+                    }`}
                   >
                     Select Shopper
                   </button>
                 </div>
-                <div style={{ color: "red" }}>58 Minutes Assigned</div>
+                <div>{`${setShopperTotalMinutesAssigned(
+                  shopper.id
+                )} Minutes Assigned`}</div>
               </div>
             );
           })}

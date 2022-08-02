@@ -61,11 +61,6 @@
   font-size: 11px;
 }
 
-/* .unassigned-carts__cart-list-view-all-button {
-    font-size: 10px; 
-    text-decoration: underline;
-} */
-
 /* shopper css */
 
 .shopper-one-container,
@@ -100,9 +95,16 @@
   background-color: lightgrey;
 }
 
-.shopper-one__cart--cart-total-minutes {
+.shopper-one__cart--cart-total-minutes,
+.shopper-two__cart--cart-total-minutes,
+.shopper-three__cart--cart-total-minutes {
   margin: auto 0px 10px 0px;
   font-size: 25px;
 }
 
+.shopper-one__cart--nothing-assigned,
+.shopper-two__cart--nothing-assigned,
+.shopper-three__cart--nothing-assigned {
+  margin-top: 20px;
+}
 /* end shopper css  */
