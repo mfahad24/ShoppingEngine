@@ -1,0 +1,11 @@
+.assignment-view-header-container {
+  margin: 10px 0px 30px 0px;
+}
+
+.assignment-view-header__cart-number {
+  font-size: 30px;
+}
+
+.assignment-view-header__cart-miles {
+  font-size: 18px;
+}

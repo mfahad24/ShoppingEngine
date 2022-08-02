@@ -1,0 +1,11 @@
+.assignment-view-items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: lightgrey;
+  width: 50%;
+  margin: 10px auto 0px auto;
+  padding: 5px 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
